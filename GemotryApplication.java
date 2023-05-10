@@ -2,7 +2,7 @@
  * Geometry Application: This is console based application to find Perimeter and Area of Square, Rectangle and Circle. 
  * This Application is made using Concepts of Abstraction, Inheritance and Runtime Polymorphism.
  * 
- * This code is Contributed by - S Sreepranav
+ * This code is Contributed by - Ganesh Pandit
  */
 
 
