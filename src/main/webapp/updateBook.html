@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book Details</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a2e;  /* Dark background */
+            color: #ffffff;  /* Light text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #343a40;
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        /* Content Section */
+        .content {
+            margin-top: 80px; /* Space for fixed navbar */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Form Container */
+        form {
+            background-color: #2c3e50;  /* Dark form background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            color: #fff;
+            text-align: left;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Input Field Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #34495e;
+            color: #fff;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Submit Button Styling */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Error Message Styling */
+        .error {
+            color: #ff4d4d;
+            font-size: 12px;
+            display: none;
+        }
+
+        /* Fade-In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .navbar a {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            form {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Add Book</a>
+        <a href="#">View Books</a>
+        <a href="#">Update Book</a>
+        <a href="#">Delete Book</a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <form id="updateBookForm" action="updateBook" method="post">
+            <label for="bookId">Book ID:</label>
+            <input type="text" id="bookId" name="bookId" required><br>
+            <div class="error" id="bookIdError">Please enter a valid Book ID.</div>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+            <div class="error" id="titleError">Please enter a valid title.</div>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br>
+            <div class="error" id="authorError">Please enter a valid author name.</div>
+
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" required><br>
+            <div class="error" id="priceError">Please enter a valid price (numeric value).</div>
+
+            <label for="qty">Quantity:</label>
+            <input type="text" id="qty" name="qty" required><br>
+            <div class="error" id="qtyError">Please enter a valid quantity (numeric value).</div>
+
+            <input type="submit" value="Update Book">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('updateBookForm').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Hide all error messages initially
+            let errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(function(el) {
+                el.style.display = 'none';
+            });
+
+            // Validate Book ID
+            const bookId = document.getElementById('bookId').value.trim();
+            if (bookId === '') {
+                valid = false;
+                document.getElementById('bookIdError').style.display = 'block';
+            }
+
+            // Validate Title
+            const title = document.getElementById('title').value.trim();
+            if (title === '') {
+                valid = false;
+                document.getElementById('titleError').style.display = 'block';
+            }
+
+            // Validate Author
+            const author = document.getElementById('author').value.trim();
+            if (author === '') {
+                valid = false;
+                document.getElementById('authorError').style.display = 'block';
+            }
+
+            // Validate Price (numeric value)
+            const price = document.getElementById('price').value.trim();
+            if (!/^\d+(\.\d{1,2})?$/.test(price)) {
+                valid = false;
+                document.getElementById('priceError').style.display = 'block';
+            }
+
+            // Validate Quantity (integer)
+            const qty = document.getElementById('qty').value.trim();
+            if (!/^\d+$/.test(qty)) {
+                valid = false;
+                document.getElementById('qtyError').style.display = 'block';
+            }
+
+            // Prevent form submission if invalid
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

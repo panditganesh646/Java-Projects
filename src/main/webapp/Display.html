@@ -1,0 +1,318 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Library Management System - Home
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .slide-in {
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+        
+         @import url(https://fonts.googleapis.com/css?family=Khula:700);
+         .hidden {
+      opacity: 0;
+    }
+    
+    .console-container {
+      font-family: 'Khula', sans-serif;
+      font-size: 4em;
+      text-align: center;
+      height: 200px;
+      width: 600px;
+      display: block;
+      position: absolute;
+      color: white;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    
+    .console-underscore {
+      display: inline-block;
+      position: relative;
+      top: -0.14em;
+      left: 10px;
+    }
+  </style>
+ 
+ </head>
+ <body class="bg-gray-900 text-gray-200">
+  <!-- Header -->
+  <header class="w-full bg-gray-800 text-gray-200 py-4">
+   <div class="container mx-auto flex justify-between items-center px-4">
+      <div class="flex items-center space-x-4">
+        <img 
+        alt="Library logo placeholder" 
+        src="images/logo.svg" 
+        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #ff6f61;" 
+    />
+         <h1 class="text-lg md:text-xl font-bold">
+           <span style="color:red;">L</span>ibrary<span style="color:red;">M</span>anagement<span style="color:red;">S</span>ystem
+         </h1>
+      </div>
+      <nav class="flex space-x-4 items-center">
+         <a class="hover:text-blue-400 transition duration-300" href="http://localhost:8082/BookManagement/Display.html">
+            <i class="fas fa-home"></i> Home
+         </a>
+         <a class="hover:text-blue-400 transition duration-300" href="Adminregister.jsp">
+            <i class="fas fa-user-plus"></i> Admin Register
+         </a>
+         <a class="hover:text-blue-400 transition duration-300" href="Adminlogin.jsp">
+            <i class="fas fa-sign-in-alt"></i> Admin Login
+         </a>
+         <a class="hover:text-blue-400 transition duration-300" href="UserLogin.jsp">
+            <i class="fas fa-user"></i> User Login
+         </a>
+      </nav>
+   </div>
+</header>
+ <section 
+    class="w-full h-screen flex items-center justify-center bg-gray-900 text-center" 
+    style="background-image: url('images/backgroundlibrary.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+   <div class="fade-in console-container">
+       <span id="text"></span>
+       <div id="console" class="console-underscore" style="font-weight:bold;">_</div>
+   </div>
+   <a href="UserLogin.jsp"> 
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105 mt-8">
+            Explore Now 
+        </button>
+    </a>
+</section>
+
+  <section class="container mx-auto py-12 px-4">
+   <h2 class="text-3xl font-bold text-center mb-8">
+    Key Features
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-gray-800 p-6 rounded-lg text-center slide-in">
+     <img alt="Icon representing search and borrow feature" class="w-12 h-12 mx-auto mb-4" height="50" src="https://storage.googleapis.com/a1aa/image/AHexmwA1pep1XE5xyplWPp5xLwbdUTtB9QyMbrVaoAYeX04nA.jpg" width="50"/>
+     <h3 class="text-xl font-semibold mb-2">
+      Borrow
+     </h3>
+     <p>
+       borrow books with ease.
+     </p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg text-center slide-in">
+     <img alt="Icon representing digital resources feature" class="w-12 h-12 mx-auto mb-4" height="50" src="https://storage.googleapis.com/a1aa/image/xE2PmZFVFGbaKZvLhm4ZL54fqkcpVVpdm9Y8QQAdyebEMa8TA.jpg" width="50"/>
+     <h3 class="text-xl font-semibold mb-2">
+      Digital Resources
+     </h3>
+     <p>
+      Access e-books and journals anytime.
+     </p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg text-center slide-in">
+     <img alt="Icon representing personalized account feature" class="w-12 h-12 mx-auto mb-4" height="50" src="https://storage.googleapis.com/a1aa/image/eFrgg30GtTRDWqEqqt3EqcTsPkmRrLjlEvmYgE0pJ9oCGNeTA.jpg" width="50"/>
+     <h3 class="text-xl font-semibold mb-2">
+      Personalized Account
+     </h3>
+     <p>
+      Manage your library account seamlessly.
+     </p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg text-center slide-in">
+     <img alt="Icon representing recommendations feature" class="w-12 h-12 mx-auto mb-4" height="50" src="https://storage.googleapis.com/a1aa/image/TzedZC8N8hTrdauLlUUEpLqxrOqj5HrWD49AHZaopNWEGNeTA.jpg" width="50"/>
+     <h3 class="text-xl font-semibold mb-2">
+      Recommendations
+     </h3>
+     <p>
+      Get book suggestions tailored to your interests.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="container mx-auto py-12 px-4 bg-gray-800 rounded-lg mt-8" id="about">
+   <h2 class="text-3xl font-bold text-center mb-8">
+    About Us
+   </h2>
+   <div class="flex flex-col md:flex-row items-center">
+    <img alt="Library interior with bookshelves" class="w-full md:w-1/2 h-64 object-cover rounded-lg mb-4 md:mb-0 md:mr-4" height="400" src="https://storage.googleapis.com/a1aa/image/CNHCa8IQ2U5HLh4ua8PmLotLIUepqljvTivfMfhjrwWAY04nA.jpg" width="600"/>
+    <p class="text-center text-lg md:text-left">
+     Our library management system is designed to help you find and borrow books with ease. We offer a wide range of digital resources and personalized recommendations to enhance your reading experience.
+    </p>
+   </div>
+  </section>
+  <!-- FAQs Section -->
+  <section class="container mx-auto py-12 px-4 mt-8" id="faqs">
+   <h2 class="text-3xl font-bold text-center mb-8">
+    FAQs
+   </h2>
+   <div class="space-y-4">
+    <div class="bg-gray-800 p-6 rounded-lg">
+     <h3 class="text-xl font-semibold mb-2">
+      How do I borrow a book?
+     </h3>
+     <p>
+      You can borrow a book by searching for it in our catalog and clicking the "Borrow" button. You will need to be logged in to your account to complete the process.
+     </p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg">
+     <h3 class="text-xl font-semibold mb-2">
+      How do I access digital resources?
+     </h3>
+     <p>
+      Digital resources can be accessed through our online catalog. Simply search for the resource you need and click the "Access" button.
+     </p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg">
+     <h3 class="text-xl font-semibold mb-2">
+      How do I manage my account?
+     </h3>
+     <p>
+      You can manage your account by logging in and navigating to the "Login User" section. Here, you can view your borrowed books, update your personal information, and more.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="container mx-auto py-12 px-4 bg-gray-800 rounded-lg mt-8" id="contact">
+   <h2 class="text-3xl font-bold text-center mb-8">
+    Contact Us
+   </h2>
+   <div class="flex flex-col md:flex-row items-center">
+    <img alt="Contact us illustration with email and phone icons" class="w-full md:w-1/2 h-64 object-cover rounded-lg mb-4 md:mb-0 md:mr-4" height="400" src="https://storage.googleapis.com/a1aa/image/ZeGVleS8ehe6eiELeMEXa17pa9LnIoPk9vdMx50ZznS1BjGfJA.jpg" width="600"/>
+    <form class="space-y-4 w-full md:w-1/2" action="saveMessage" method="post">
+     <div>
+      <label class="block text-gray-200 font-semibold mb-2" for="name">
+       Name
+      </label>
+      <input class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-gray-200" id="name" name="name" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-gray-200 font-semibold mb-2" for="email">
+       Email
+      </label>
+      <input class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-gray-200" id="email" name="email" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block text-gray-200 font-semibold mb-2" for="message">
+       Message
+      </label>
+      <textarea class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-gray-200" id="message" name="message" required rows="4"></textarea>
+     </div>
+     <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105" type="submit">
+      Send Message
+     </button>
+    </form>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="w-full bg-gray-800 text-gray-200 py-8 mt-8">
+   <div class="container mx-auto text-center">
+    <div class="mb-4">
+     <a class="hover:text-blue-400 transition duration-300" href="#">
+      Privacy Policy
+     </a>
+     |
+     <a class="hover:text-blue-400 transition duration-300" href="#">
+      Terms of Service
+     </a>
+     |
+     <a class="hover:text-blue-400 transition duration-300" href="#">
+      FAQs
+     </a>
+    </div>  -
+    <div class="mb-4">
+     <a class="hover:text-blue-400 transition duration-300" href="mailto:info@library.com">
+      info@library.com
+     </a>
+     |
+     <a class="hover:text-blue-400 transition duration-300" href="tel:+1234567890">
+      +1 234 567 890
+     </a>
+     |
+     <span>
+      123 Library St, Booktown, BK 12345
+     </span>
+    </div>
+    <div class="mb-4">
+     <a class="fab fa-facebook hover:text-blue-400 transition duration-300 mx-2" href="https://facebook.com" target="_blank">
+     </a>
+     <a class="fab fa-twitter hover:text-blue-400 transition duration-300 mx-2" href="https://twitter.com" target="_blank">
+     </a>
+     <a class="fab fa-instagram hover:text-blue-400 transition duration-300 mx-2" href="https://instagram.com" target="_blank">
+     </a>
+     <a class="fab fa-linkedin hover:text-blue-400 transition duration-300 mx-2" href="https://linkedin.com" target="_blank">
+     </a>
+    </div>
+    <p>
+     © 2024 Library Management System. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <script type="text/javascript">
+  // function([string1, string2], target id, [color1, color2])
+  consoleText(['Unlock the World of Knowledge.'], 'text', ['white', 'gray', 'lightblue']);
+
+  function consoleText(words, id, colors) {
+      if (colors === undefined) colors = ['#fff'];
+      var visible = true;
+      var con = document.getElementById('console');
+      var letterCount = 1;
+      var x = 1;
+      var waiting = false;
+      var target = document.getElementById(id);
+      target.setAttribute('style', 'color:' + colors[0],' font-weight: bold;');
+      window.setInterval(function() {
+          if (letterCount === 0 && waiting === false) {
+              waiting = true;
+              target.innerHTML = words[0].substring(0, letterCount);
+              window.setTimeout(function() {
+                  var usedColor = colors.shift();
+                  colors.push(usedColor);
+                  var usedWord = words.shift();
+                  words.push(usedWord);
+                  x = 1;
+                  target.setAttribute('style', 'color:' + colors[0]+ '; font-weight: bold;');
+                  letterCount += x;
+                  waiting = false;
+              },120);
+          } else if (letterCount === words[0].length + 1 && waiting === false) {
+              waiting = true;
+              window.setTimeout(function() {
+                  x = -1;
+                  letterCount += x;
+                  waiting = false;
+              }, 1000);
+          } else if (waiting === false) {
+              target.innerHTML = words[0].substring(0, letterCount);
+              letterCount += x;
+          }
+      }, 130);
+      window.setInterval(function() {
+          if (visible === true) {
+              con.className = 'console-underscore hidden';
+              visible = false;
+          } else {
+              con.className = 'console-underscore';
+              visible = true;
+          }
+      }, 500);
+  }
+
+  </script>
+ </body>
+</html>
